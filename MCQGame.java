@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class MCQGame {
     public static void main(String[] args) {
-        String[] answers = {"c", "b", "d", "b", "b", "c", "a", "a", "d", "a", "a", "a", "c", "d", "b", "a"};
+        String[] answers = {"c", "b", "d", "b", "b", "c", "a", "a", "d", "a", "a", "a", "c", "d", "b", "a", "d","b","a","b"};
         Random rand = new Random();
         int response;
         int round = 1;
@@ -12,7 +12,7 @@ public class MCQGame {
             JOptionPane.showMessageDialog(null, "          WELCOME TO JINX MCQ GAMES          \nEnter a letter to answer the questions: " + "Round " + round);
 
             // Generate 5 random questions for the current round
-            int[] randomQ = rand.ints(0, 16).distinct().limit(5).toArray();
+            int[] randomQ = rand.ints(0, 20).distinct().limit(5).toArray();
 
             // Questions
             String[] input = new String[5]; // Capacity of questions asked
@@ -45,7 +45,7 @@ public class MCQGame {
 
             // Asking if Player wants to play the next round
             if (score == 4 | score == 5) {
-                response = JOptionPane.showConfirmDialog(null, "Do you want to play Round 2?", "Confirmation", JOptionPane.YES_NO_OPTION);
+                response = JOptionPane.showConfirmDialog(null, "Do you want to play the next Round?", "Confirmation", JOptionPane.YES_NO_OPTION);
                 round++;
             } else {
                 response = JOptionPane.showConfirmDialog(null, "Do you want to play again?", "Confirmation", JOptionPane.YES_NO_OPTION);
@@ -93,6 +93,14 @@ public class MCQGame {
                 return "Which country is known as the \"Land of the Midnight Sun\"?\n a)Kenya \n b)Norway \n c)Japan \n d)Egypt";
             case 15: 
                 return "Which country is the largest by population?\n a)India \n b)United States \n c)China \n d)Brazil ";
+            case 16: 
+                return "Which of the following is not a primary color?\n a)Red \n b)Yellow \n c)Green \n d)Purple ";
+            case 17: 
+                return "Who developed the theory of relativity?\n a)Isaac Newton \n b)Albert Einstein \n c)Stephen Hawking \n d)David Obadiah";
+            case 18: 
+                return "What is the chemical symbol for gold?\n a)Au \n b)Ag \n c)Pb \n d)Fe";
+            case 19: 
+                return "What is the capital city of Japan?\n a)Kyoto \n b)Tokyo \n c)Osaka \n d)Hiroshima";
             default:
                 return "";
         }
